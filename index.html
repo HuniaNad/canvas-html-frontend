@@ -44,8 +44,11 @@
                     </div>
                 </div>
                 <div class="btn-area justify-content-end">
-                    <button type="button" class="primary d-block mx-auto m-2 w-100">Choose File</button>
-                    <button type="button" class="outline-primary d-block mx-auto m-2 w-100">Download Card</button>
+                    <button type="button" id="choose-file" class="primary d-block mx-auto m-2 w-100">
+                        Choose File
+                        <input type="file" id="file-input" accept="image/*" hidden />
+                    </button>
+                    <button type="button" id="download-file"  class="outline-primary d-block mx-auto m-2 w-100">Download Card</button>
                 </div>
                 
             </div>
@@ -61,7 +64,6 @@
                     <canvas id="canvas"></canvas>
                 </div>
     
-    
                 <div class="card-footer">
                     <small class="text-muted fst-italic">By: <small id="footer"></small></small>
                 </div>
@@ -69,6 +71,8 @@
 
         </div>
     </section>
+
+    <script src="./script.js"></script>
     
 </body>
 </html>
