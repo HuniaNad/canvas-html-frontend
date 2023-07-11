@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway&display=swap');
+
+:root {
+    --bs-accent: #f26757;
+    --bs-light-accent: #ffccc6;
+    --bs-light-grey: #a5a5a5ab;
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bs-accent);
+    width: 100vw;
+    height: 80%;
+}
+
+section {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+}
+
+.card-subtitle {
+    font-size: 0.9em;
+    color: var(--bs-light-grey);
+    margin-bottom: 10px;
+}
+
+label {
+    color: var(--bs-light-grey);
+    font-size: 0.9rem;
+}
+
+input {
+    font-size: 0.9rem !important;
+}
+input:focus, button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: var(--bs-light-accent) !important;
+}
+.btn:focus {
+    background-color: none;
+}
+
+input[type="color"] {
+    padding: 0 !important;
+    border: none !important;
+    font-size: 2.3rem !important;
+}
+
+.btn-primary {
+    background-color: var(--bs-accent);
+    border-color: var(--bs-accent);
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border-color: var(--bs-accent);
+    color: var(--bs-accent);
+}
+
+.btn-outline-primary {
+    background-color: white;
+    border-color: var(--bs-accent);
+    color: var(--bs-accent);
+}
+.btn-outline-primary:hover {
+    background-color: var(--bs-accent);
+    border-color: var(--bs-accent);
+}
+
+/* Side Menu */
+.side-menu {
+    width: 30%;
+    margin: 10px;
+}
+
+.draw-options-area {
+    margin-top: 1.5rem;
+}
+.line-width input[type="range"] {
+    width: 20%;
+    margin-right: 10px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--bs-accent);
+    box-shadow: none !important;
+    outline: none !important;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+    background-color: var(--bs-accent);
+}
+
+
+.line-width input[type="color"] {
+    width: 20px !important;
+    font-size: 12px !important;
+}
+
+.btn-area {
+    margin-top: 3rem;
+}
+
+/* Canvas Area */
+.canvas-box {
+    width: 70%;
+    margin: 10px;
+}
+
+.canvas-box .card, .canvas-box .card-img-top, #canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.canvas-box .card-header {
+    margin-bottom: 0;
+    height: 60px;
+}
