@@ -28,6 +28,7 @@ window.addEventListener("load", ()=>{
 const startDraw = (e) => {
   isDrawing = true
   context.beginPath()
+  draw(e)
 }
 
 const draw = (e) => {
