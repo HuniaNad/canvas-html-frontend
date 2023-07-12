@@ -1,7 +1,9 @@
 const headerInput = document.getElementById("header-input");
 const headerText = document.getElementById("header")
+
 const footerInput = document.getElementById("footer-input");
 const footerText = document.getElementById("footer")
+
 const chooseButton = document.getElementById("choose-file");
 const downloadButton = document.getElementById("download-file");
 const fileInputField = document.getElementById("file-input");
@@ -19,9 +21,18 @@ const updateHeader = () => {
   }
   headerText.appendChild(textNode);
 }
-const updateFooter = (e) => {
-  footerText.innerText = e.target.value
+
+
+const updateFooter = () => {
+  const textNode = document.createTextNode(footerInput.value);
+  while (footerText.firstChild) {
+    footerText.firstChild.remove();
+  }
+  footerText.appendChild(textNode);
 }
+
+
+
 
 
 const openExplorer = (e) => {
