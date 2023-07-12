@@ -14,15 +14,16 @@
 
 body {
     background-color: var(--bs-accent);
-    padding: 1rem 3rem;
-}
-
-section {
-    grid-template-columns: 1fr 4fr;
+    padding: 0;
 }
 
 .logo {
     font-family: 'Pacifico', cursive;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .card-subtitle {
@@ -49,6 +50,7 @@ label {
 
 input {
     font-size: 0.9rem !important;
+    border-radius: 6px !important;
 }
 input:focus {
     box-shadow: none !important;
@@ -104,7 +106,6 @@ button {
 
 /* Side Menu */
 .side-menu {
-    width: 30%;
     margin: 10px;
 }
 
@@ -137,7 +138,6 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 /* Canvas Area */
 .canvas-box {
-    width: 70%;
     margin: 10px;
 }
 
@@ -153,4 +153,29 @@ input[type="range"]::-webkit-slider-thumb:active {
 #canvas-background {
     width: 100%;
     height: auto;
+}
+
+.card-footer p{
+    color: #6c757d;
+}
+
+@media screen and (min-width: 992px) {
+    .side-menu {
+        width: 25%;
+    }
+    .canvas-box {    
+        width: 70%;
+    }  
+    #choose-file{
+        font-size: 0.8rem;
+    }
+    #download-file{
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        padding: 1rem 1rem;
+    } 
 }
