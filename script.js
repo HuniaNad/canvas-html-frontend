@@ -1,7 +1,11 @@
 const headerInput = document.getElementById("header-input");
+const headerColor = document.getElementById("header-color")
+const headerTextDiv = document.querySelector(".card-header")
 const headerText = document.getElementById("header")
 
 const footerInput = document.getElementById("footer-input");
+const footerColor = document.getElementById("footer-color")
+const footerTextDiv = document.querySelector(".card-footer")
 const footerText = document.getElementById("footer")
 
 const chooseButton = document.getElementById("choose-file");
@@ -10,9 +14,57 @@ const fileInputField = document.getElementById("file-input");
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
-window.onload = () => {
+var isDrawing = false;
+
+
+window.addEventListener("load", ()=>{
   updateHeader()
+  canvas.width = canvas.offsetWidth 
+  canvas.height = canvas.offsetHeight
+})
+  
+
+
+const startDraw = (e) => {
+  isDrawing = true
+  context.beginPath()
 }
+
+const draw = (e) => {
+  if(!isDrawing) return;
+  context.lineCap = "round"
+  context.lineTo(e.offsetX, e.offsetY);
+  context.stroke();
+}
+
+const stopDraw = (e) => {
+  isDrawing = false
+}
+
+
+canvas.addEventListener("mousedown", startDraw)
+canvas.addEventListener("mousemove", draw)
+canvas.addEventListener("mouseup", stopDraw)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const updateHeader = () => {
   const textNode = document.createTextNode(headerInput.value);
@@ -21,7 +73,9 @@ const updateHeader = () => {
   }
   headerText.appendChild(textNode);
 }
-
+const updateHeaderColor = (e) => {
+  headerTextDiv.style.backgroundColor = e.target.value;
+}
 
 const updateFooter = () => {
   const textNode = document.createTextNode(footerInput.value);
@@ -30,9 +84,9 @@ const updateFooter = () => {
   }
   footerText.appendChild(textNode);
 }
-
-
-
+const updateFooterColor = (e) => {
+  footerTextDiv.style.backgroundColor = e.target.value;
+}
 
 
 const openExplorer = (e) => {
@@ -72,7 +126,9 @@ const downloadCard = (e) => {
 };
 
 headerInput.addEventListener("input", updateHeader);
+headerColor.addEventListener("input", updateHeaderColor);
 footerInput.addEventListener("input", updateFooter);
+footerColor.addEventListener("input", updateFooterColor);
 chooseButton.addEventListener("click", openExplorer);
 fileInputField.addEventListener("change", setCanvasBackground);
 downloadButton.addEventListener("click", downloadCard);
