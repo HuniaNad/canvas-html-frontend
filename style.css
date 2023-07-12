@@ -14,14 +14,11 @@
 
 body {
     background-color: var(--bs-accent);
-    width: 100vw;
-    height: 80%;
+    padding: 1rem 3rem;
 }
 
 section {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    grid-template-columns: 1fr 4fr;
 }
 
 .logo {
@@ -34,9 +31,20 @@ section {
     margin-bottom: 10px;
 }
 
+.subtitle-lvl-2 {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    color: var(--bs-light-accent);
+    margin-left: auto;
+}
+
 label {
     color: var(--bs-light-grey);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+    width: 50%;
+    margin-left: auto;
 }
 
 input {
@@ -52,7 +60,14 @@ input:focus {
 input[type="color"] {
     padding: 0 !important;
     border: none !important;
-    font-size: 2.3rem !important;
+    width: 20px !important;
+    font-size: 12px !important;
+    margin-left: 10px !important;
+    background: transparent;
+}
+.input-group > input[type="color"] {
+    justify-content: end;
+
 }
 
 .input-group > .form-control {
@@ -93,6 +108,13 @@ button {
     margin: 10px;
 }
 
+.fa-arrows-rotate {
+    color: var(--bs-accent);
+}
+.fa-arrows-rotate:hover {
+    color: var(--bs-light-accent);
+}
+
 .draw-options-area {
     margin-top: 1.5rem;
 }
@@ -107,12 +129,6 @@ input[type="range"]::-webkit-slider-thumb {
 }
 input[type="range"]::-webkit-slider-thumb:active {
     background-color: var(--bs-accent);
-}
-
-
-.line-width input[type="color"] {
-    width: 20px !important;
-    font-size: 12px !important;
 }
 
 .btn-area {
