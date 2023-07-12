@@ -134,11 +134,8 @@ downloadButton.addEventListener("click", downloadCard);
 resetButton.addEventListener("click", resetCanvas)
 
 canvas.addEventListener("mousedown", startDraw)
-canvas.addEventListener("touchstart", startDraw)
 canvas.addEventListener("mousemove", draw)
-canvas.addEventListener("touchmove", draw)
 canvas.addEventListener("mouseup", stopDraw)
-canvas.addEventListener("touchend", stopDraw)
 lineWidth.addEventListener("input", setLineWidth)
 lineColor.addEventListener("input", setLineColor)
 
