@@ -137,6 +137,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 /* Canvas Area */
 .canvas-box {
     margin: 10px;
+    margin-bottom: 10px !important
 }
 
 .canvas-box .card, .canvas-box .card-img-top, #canvas {
@@ -183,7 +184,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 @media screen and (max-width: 991px) {
-    section {
-        flex-direction: column-reverse;
+    .canvas-box, .side-menu {
+        margin: 0;
     }
 }
