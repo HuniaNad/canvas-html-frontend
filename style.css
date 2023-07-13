@@ -15,12 +15,7 @@
 body {
     background-color: var(--bs-accent);
     padding: 0;
-}
-section {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
 }
 
 .logo {
@@ -44,7 +39,6 @@ section {
 
 label {
     color: var(--bs-light-grey);
-    font-size: 0.75rem;
     width: 50%;
     margin-left: auto;
 }
@@ -109,6 +103,10 @@ button {
     margin: 10px;
 }
 
+.side-menu .color-label {
+    font-size: 0.75rem;
+}
+
 .fa-arrows-rotate {
     color: var(--bs-accent);
 }
@@ -160,6 +158,11 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 
 @media screen and (min-width: 992px) {
+    body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+    }
     .side-menu {
         width: 25%;
     }
@@ -176,6 +179,7 @@ input[type="range"]::-webkit-slider-thumb:active {
         margin-left: 0;
         margin-right: 0;
     }
+    
 }
 
 @media screen and (max-width: 991px) {
