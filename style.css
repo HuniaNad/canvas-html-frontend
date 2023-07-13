@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway&display=swap');
+
+:root {
+    --bs-accent: #f26757;
+    --bs-light-accent: #ffccc6;
+    --bs-light-grey: #a5a5a5ab;
+}
+
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bs-accent);
+    padding: 0;
+
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+}
+
+.card-subtitle {
+    font-size: 0.9em;
+    color: var(--bs-light-grey);
+    margin-bottom: 10px;
+}
+
+.subtitle-lvl-2 {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    color: var(--bs-light-accent);
+    margin-left: auto;
+}
+
+label {
+    color: var(--bs-light-grey);
+    width: 50%;
+    margin-left: auto;
+}
+
+input {
+    font-size: 0.9rem !important;
+    border-radius: 6px !important;
+}
+input:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: var(--bs-light-accent) !important;
+    background-color: transparent;
+}
+
+input[type="color"] {
+    padding: 0 !important;
+    border: none !important;
+    width: 20px !important;
+    font-size: 12px !important;
+    margin-left: 10px !important;
+    background: transparent;
+}
+.input-group > input[type="color"] {
+    justify-content: end;
+}
+
+.input-group > .form-control {
+    position: static;
+    background: transparent;
+}
+
+button {
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid var(--bs-accent);
+}
+.primary {
+    background-color: var(--bs-accent);
+    color: white;
+}
+
+.primary:hover {
+    background-color: white;
+    border-color: var(--bs-accent);
+    color: var(--bs-accent);
+}
+
+.outline-primary {
+    background-color: white;
+    color: var(--bs-accent);
+}
+.outline-primary:hover {
+    background-color: var(--bs-accent);
+    border-color: var(--bs-accent);
+    color: white;
+}
+
+/* Side Menu */
+.side-menu {
+    margin: 10px;
+}
+
+.side-menu .color-label {
+    font-size: 0.75rem;
+}
+
+.fa-arrows-rotate {
+    color: var(--bs-accent);
+}
+.fa-arrows-rotate:hover {
+    color: var(--bs-light-accent);
+}
+
+.draw-options-area {
+    margin-top: 1.5rem;
+}
+.line-width input[type="range"] {
+    width: 20%;
+    margin-right: 10px;
+    padding-bottom: 10px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    background-color: var(--bs-accent);
+    box-shadow: none !important;
+    outline: none !important;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+    background-color: var(--bs-accent);
+}
+#range-value {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    font-size: 0.7rem;
+    bottom: 0px;
+    color: var(--bs-accent);
+    font-weight: bold;
+}
+
+
+.btn-area {
+    margin-top: 3rem;
+}
+
+/* Canvas Area */
+.canvas-box {
+    margin: 10px;
+    margin-bottom: 10px !important
+}
+
+.canvas-box .card, .canvas-box .card-img-top, #canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.canvas-box .card-header {
+    margin-bottom: 0;
+    height: 60px;
+}
+#canvas-background {
+    width: 100%;
+    height: auto;
+}
+
+.card-footer p{
+    color: #6c757d;
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        display: grid;
+        place-items: center;
+        min-height: 100vh;
+    }
+    .side-menu {
+        width: 25%;
+    }
+    .canvas-box {    
+        width: 70%;
+    }  
+    #choose-file{
+        font-size: 0.8rem;
+    }
+    #download-file{
+        font-size: 0.8rem;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+}
+
+@media screen and (max-width: 991px) {
+    .canvas-box, .side-menu {
+        margin: 0;
+    }
+}

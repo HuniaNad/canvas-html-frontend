@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+    <title>SnapDraw</title>
+</head>
+<body>
+    <section class="container-fluid p-4 p-lg-0"> 
+        <div class="row justify-content-center flex-column-reverse flex-lg-row">
+            <div class="side-menu card col-md-12 px-0">
+                <div class="logo-div d-flex justify-content-between align-items-center my-3 mx-3">
+                    <h3 class="logo card-title">SnapDraw</h3>
+                    <i class="fa-solid fa-arrows-rotate"
+                    data-bs-toggle="tooltip" data-bs-placement="left" title="Clear Canvas"></i></i>
+                </div>
+                
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <div class="input-area">
+                        <h6 class="card-subtitle">Inputs</h6>
+    
+                        <div class="d-flex flex-column">
+                            <div class="input-group form-floating mb-1">
+                                <input type="text" class="form-control" value="Dummy Heading" id="header-input" placeholder="Header">
+                                <label for="header">Header</label>
+                            </div>
+    
+                            <h6 class="subtitle-lvl-2 card-subtitle mt-0 pt-0">Colors</h6>
+    
+                            <div class="input-group mb-1">
+                                <label class="color-label" for="header-color">Background</label>
+                                <input type="color" class="form-control-color" id="header-color" data-bs-toggle="tooltip" data-bs-placement="left" title="Color Picker">
+                            </div>
+    
+                            <div class="input-group">
+                                <label class="color-label" for="header-text-color">Text</label>
+                                <input type="color" class="form-control-color" id="header-text-color" data-bs-toggle="tooltip" data-bs-placement="left" title="Color Picker">
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex flex-column mt-3">
+                            <div class="form-floating input-group mb-1">
+                                <input type="text" class="form-control" id="footer-input" placeholder="Footer">
+                                <label for="footer">Footer</label>
+                            </div>
+    
+                            <h6 class="subtitle-lvl-2 card-subtitle mt-0 pt-0">Colors</h6>
+    
+                            <div class="input-group mb-1">
+                                <label class="color-label" for="footer-color">Background</label>
+                                <input type="color" class="form-control-color" id="footer-color" data-bs-toggle="tooltip" data-bs-placement="left" title="Color Picker">
+                            </div>
+    
+                            <div class="input-group">
+                                <label class="color-label" for="footer-text-color">Text</label>
+                                <input type="color" class="form-control-color" id="footer-text-color" data-bs-toggle="tooltip" data-bs-placement="left" title="Color Picker">
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                    <div class="draw-options-area">
+                        <h6 class="card-subtitle">Draw Options</h6>
+    
+                        <div class="line-width input-group flex-row d-flex align-items-center justify-content-between">
+                            <div class="w-75">
+                                <input type="range" value="10" min="1" max="50"  class="form-range w-100" id="line-width">
+                                <span id="range-value"></span>
+                            </div>
+    
+                            <input type="color" class="form-control-color" id="line-color" data-bs-toggle="tooltip" data-bs-placement="left" title="Color Picker">
+                        </div>
+                    </div>
+                    
+                    <div class="btn-area d-flex justify-content-center align-items-center">
+                        <button type="button" id="choose-file" class="primary py-1 px-2 m-2 w-100">
+                            Upload File
+                            <input type="file" id="file-input" accept="image/*" hidden />
+                        </button>
+                        <button type="button" id="download-file"  class="outline-primary py-1 px-2 m-2 w-100">Download</button>
+                    </div>
+                    
+                </div>
+            </div>
+    
+            <div class="mb-2 mb-lg-0  canvas-box shadow col-md-12 px-0">
+                <div class="card border-0" id="downloadableCard">
+                    <div class="card-header">
+                        <h5 class="card-title text-center text-capitalize fw-bold" id="header"></h5>
+                    </div>
+        
+                    <div class="card-img-top" alt="Card image cap">
+                        <canvas id="canvas"></canvas>
+                    </div>
+        
+                    <div class="card-footer">
+                        <p id="default-text" class="small text-capitalize fst-italic mb-0">By: <small id="footer"></small></p>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dom-to-image/dist/dom-to-image.min.js"></script>
+    <script src="./script.js"></script>
+    
+</body>
+</html>
