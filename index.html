@@ -71,7 +71,10 @@
                         <h6 class="card-subtitle">Draw Options</h6>
     
                         <div class="line-width input-group flex-row d-flex align-items-center justify-content-between">
-                            <input type="range" value="10" min="1" max="50"  class="form-range w-75" id="line-width">
+                            <div class="w-75">
+                                <input type="range" value="10" min="1" max="50"  class="form-range w-100" id="line-width">
+                                <span id="range-value"></span>
+                            </div>
     
                             <input type="color" class="form-control-color" id="line-color" data-bs-toggle="tooltip" data-bs-placement="left" title="Color Picker">
                         </div>

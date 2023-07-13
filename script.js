@@ -4,6 +4,9 @@ const headerTextColor = document.getElementById("header-text-color")
 const headerTextDiv = document.querySelector(".card-header")
 const headerText = document.getElementById("header")
 
+const rangeValue = document.querySelector("input[type='range']")
+const rangeValuePreview = document.getElementById("range-value")
+
 const footerInput = document.getElementById("footer-input");
 const footerColor = document.getElementById("footer-color")
 const footerTextColor = document.getElementById("footer-text-color")
@@ -23,6 +26,7 @@ var isDrawing = false;
 
 window.addEventListener("load", () => {
   updateHeader()
+  updateRange()
   canvas.width = canvas.offsetWidth 
   canvas.height = canvas.offsetHeight
   setLineWidth()
@@ -65,6 +69,15 @@ const updateHeaderColor = (e) => {
 }
 const updateHeaderTextColor = (e) => {
   headerText.style.color = e.target.value;
+}
+
+const updateRange = () => {
+  console.log(rangeValuePreview)
+  const textNode = document.createTextNode(rangeValue.value);
+  while (rangeValuePreview.firstChild) {
+    rangeValuePreview.firstChild.remove();
+  }
+  rangeValuePreview.appendChild(textNode);
 }
 
 const updateFooter = () => {
@@ -125,6 +138,7 @@ const downloadCard = (e) => {
 headerInput.addEventListener("input", updateHeader);
 headerColor.addEventListener("input", updateHeaderColor);
 headerTextColor.addEventListener("input", updateHeaderTextColor);
+rangeValue.addEventListener("input", updateRange)
 footerInput.addEventListener("input", updateFooter);
 footerColor.addEventListener("input", updateFooterColor);
 footerTextColor.addEventListener("input", updateFooterTextColor);
