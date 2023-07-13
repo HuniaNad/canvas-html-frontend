@@ -16,14 +16,15 @@ body {
     background-color: var(--bs-accent);
     padding: 0;
 }
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 .logo {
     font-family: 'Pacifico', cursive;
-}
-
-.row {
-    margin-left: 0;
-    margin-right: 0;
 }
 
 .card-subtitle {
@@ -69,7 +70,6 @@ input[type="color"] {
 }
 .input-group > input[type="color"] {
     justify-content: end;
-
 }
 
 .input-group > .form-control {
@@ -172,10 +172,14 @@ input[type="range"]::-webkit-slider-thumb:active {
     #download-file{
         font-size: 0.8rem;
     }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
-@media screen and (max-width: 992px) {
-    body {
-        padding: 1rem 1rem;
-    } 
+@media screen and (max-width: 991px) {
+    section {
+        flex-direction: column-reverse;
+    }
 }
