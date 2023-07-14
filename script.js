@@ -23,7 +23,7 @@ const lineWidth = document.getElementById("line-width")
 const lineColor = document.getElementById("line-color")
 var isDrawing = false;
 
-
+//  Update Header text, pen line width and canvas dimensions on every window load 
 window.addEventListener("load", () => {
   updateHeader()
   updateRange()
@@ -31,13 +31,15 @@ window.addEventListener("load", () => {
   canvas.height = canvas.offsetHeight
   setLineWidth()
 })
-  
+ 
+// when cursor starts drawing on mousedown
 const startDraw = (e) => {
   isDrawing = true
   context.beginPath()
   draw(e)
 }
 
+// when cursor continues drawing on mousemove
 const draw = (e) => {
   if(!isDrawing) return;
   context.lineCap = "round"
@@ -45,18 +47,22 @@ const draw = (e) => {
   context.stroke();
 }
 
+// when cursor stops drawing on mouseup
 const stopDraw = (e) => {
   isDrawing = false
 }
 
+// set pen line width on input
 const setLineWidth = () => {
   context.lineWidth = lineWidth.value
 }
+// set pen line custom color on input
 const setLineColor = () => {
   console.log(lineColor.value)
   context.strokeStyle = lineColor.value
 }
 
+// update card header on input
 const updateHeader = () => {
   const textNode = document.createTextNode(headerInput.value);
   while (headerText.firstChild) {
@@ -64,13 +70,16 @@ const updateHeader = () => {
   }
   headerText.appendChild(textNode);
 }
+// update card header background color on input
 const updateHeaderColor = (e) => {
   headerTextDiv.style.backgroundColor = e.target.value;
 }
+// update card header text color on input
 const updateHeaderTextColor = (e) => {
   headerText.style.color = e.target.value;
 }
 
+// update range preview value when range input slides
 const updateRange = () => {
   console.log(rangeValuePreview)
   const textNode = document.createTextNode(rangeValue.value);
@@ -80,6 +89,7 @@ const updateRange = () => {
   rangeValuePreview.appendChild(textNode);
 }
 
+// update card footer on input
 const updateFooter = () => {
   const textNode = document.createTextNode(footerInput.value);
   while (footerText.firstChild) {
@@ -87,22 +97,27 @@ const updateFooter = () => {
   }
   footerText.appendChild(textNode);
 }
+// update card footer background color on input
 const updateFooterColor = (e) => {
   footerTextDiv.style.backgroundColor = e.target.value;
 }
+// update card footer text color on input
 const updateFooterTextColor = (e) => {
   footerText.style.color = e.target.value;
   document.getElementById("default-text").style.color = e.target.value
 }
 
+// clean canvas
 const resetCanvas = () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+// open file explorer to select the image to upload on canvas
 const openExplorer = (e) => {
   fileInputField.click();
 };
 
+// set canvas background as the uploaded image
 const setCanvasBackground = (e) => {
   const imagePath = URL.createObjectURL(e.target.files[0]);
   canvas.style.backgroundImage = `url(${imagePath})`;
@@ -111,6 +126,7 @@ const setCanvasBackground = (e) => {
   canvas.style.backgroundPosition = "center";
 };
 
+// download card
 const downloadCard = (e) => {
   const element = document.getElementById("downloadableCard");
 
@@ -135,6 +151,7 @@ const downloadCard = (e) => {
   }
 };
 
+// Side Menu Event Listeners
 headerInput.addEventListener("input", updateHeader);
 headerColor.addEventListener("input", updateHeaderColor);
 headerTextColor.addEventListener("input", updateHeaderTextColor);
@@ -147,12 +164,14 @@ fileInputField.addEventListener("change", setCanvasBackground);
 downloadButton.addEventListener("click", downloadCard);
 resetButton.addEventListener("click", resetCanvas)
 
+// Canvas Event Listeners
 canvas.addEventListener("mousedown", startDraw)
 canvas.addEventListener("mousemove", draw)
 canvas.addEventListener("mouseup", stopDraw)
 lineWidth.addEventListener("input", setLineWidth)
 lineColor.addEventListener("input", setLineColor)
 
+// Bootstrap Tooltips
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)

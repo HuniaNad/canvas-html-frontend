@@ -169,6 +169,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     color: #6c757d;
 }
 
+/* Devices with width equal and more than 992px  */
 @media screen and (min-width: 992px) {
     body {
         display: grid;
@@ -194,6 +195,7 @@ input[type="range"]::-webkit-slider-thumb:active {
     
 }
 
+/* Devices with width less than 992px  */
 @media screen and (max-width: 991px) {
     .canvas-box, .side-menu {
         margin: 0;
