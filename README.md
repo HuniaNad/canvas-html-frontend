@@ -13,7 +13,7 @@ The following are the main features of the app:
 Following are the steps to run the project on your system:
 - Clone repository on your local system
 ```bash
-$ git clone https://github.com/username/snapdraw-canvas-assignment.git
+$ git clone https://github.com/HuniaNad/snapdraw-canvas-html.git
 ```
 - Click on _*index.html*_ to open the project on your browser
   OR
@@ -21,6 +21,6 @@ $ git clone https://github.com/username/snapdraw-canvas-assignment.git
 
 ## Deployed Links:
 Following are the project's deployed links on Netlify and GitHub Pages:
-- [Netlify](https://snapdraw-canvas.netlify.app/)
+- [Netlify](https://snapdraw.netlify.app/)
 
 
